@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Title, TextInput } from "react-native-paper";
 import { useDispatch } from "react-redux";
-import { addDeck } from "../actions/index";
+import { addDeck } from "../redux/actions/index";
 import { saveDeck } from "../utils/api";
 import styled from "styled-components/native";
 import { CommonActions } from "@react-navigation/native";

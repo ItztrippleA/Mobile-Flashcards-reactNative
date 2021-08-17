@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { ScrollView } from "react-native";
 import { connect } from "react-redux";
 import { getDecks } from "../utils/api";
-import { showDecks } from "../actions";
+import { showDecks } from "../redux/actions";
 import DeckListCard from "./DeckListCard";
 import styled from "styled-components/native";
 
@@ -23,7 +23,17 @@ class DeckList extends Component {
     const { allDecks, navigation } = this.props;
     return (
       <DeckListContainer>
-        {/* put a scroll view and list the cards */}
+        <ScrollView>
+          {allDecks.map((deck) => {
+            return (
+              <DeckListCard
+                key={deck.title}
+                deck={deck}
+                navigation={navigation}
+              />
+            );
+          })}
+        </ScrollView>
       </DeckListContainer>
     );
   }

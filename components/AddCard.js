@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Card, Title, TextInput } from "react-native-paper";
 import { useDispatch } from "react-redux";
 import { addCardToDeck } from "../utils/api";
-import { addCard } from "../actions/index";
+import { addCard } from "../redux/actions/index";
 import { CommonActions } from "@react-navigation/native";
 import styled from "styled-components/native";
 

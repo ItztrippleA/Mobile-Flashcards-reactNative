@@ -3,17 +3,17 @@ import { View } from "react-native";
 import { Button, Title, Text } from "react-native-paper";
 import { connect } from "react-redux";
 import { removeDeck } from "../utils/api";
-import { deleteDeck } from "../actions";
+import { deleteDeck } from "../redux/actions";
 import { CommonActions } from "@react-navigation/native";
 import styled from "styled-components/native";
 import { red } from "../utils/colors";
 
 // Styled Components
-const SingleDeckContainer = styled(View)`
-  flex: 1;
-  padding: 16px;
-`;
 
+const StyledText = styled(Text)`
+  text-align: center;
+  font-size: 20px;
+`;
 const StyledTitle = styled(Title)`
   padding-top: 32px;
   text-align: center;
@@ -21,9 +21,9 @@ const StyledTitle = styled(Title)`
   font-weight: 400;
 `;
 
-const StyledText = styled(Text)`
-  text-align: center;
-  font-size: 20px;
+const SingleDeckContainer = styled(View)`
+  flex: 1;
+  padding: 16px;
 `;
 
 const StyledButton = styled(Button)`

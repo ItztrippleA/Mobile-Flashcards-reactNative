@@ -1,4 +1,4 @@
-import { getDecks } from "../utils/api";
+import { getDecks } from "../../utils/api";
 
 export const SHOW_DECKS = "SHOW_DECKS";
 export const SHOW_DECK = "SHOW_DECK";

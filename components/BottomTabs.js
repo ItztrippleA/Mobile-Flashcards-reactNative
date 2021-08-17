@@ -1,31 +1,34 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
 import DeckList from "./DeckList";
 import NewDeck from "./NewDeck";
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 const BottomTabs = () => {
   return (
     <Tab.Navigator
-    //   initialRouteName="Decks"
-    //   shifting={true}
-    //   sceneAnimationEnabled={false}
+      initialRouteName="Decks"
+      shifting={true}
+      sceneAnimationEnabled={false}
+      activeColor="#694fad"
+      inactiveColor="#3e2465"
+      barStyle={{ backgroundColor: "#f0edf6" }}
     >
       <Tab.Screen
         name="Decks"
         component={DeckList}
-        // options={{
-        //   tabBarIcon: "home-account",
-        // }}
+        options={{
+          tabBarIcon: "cards",
+        }}
       />
       <Tab.Screen
         name="Add Deck"
         component={NewDeck}
-        // options={{
-        //   tabBarIcon: "plus",
-        // }}
+        options={{
+          tabBarIcon: "plus",
+        }}
       />
     </Tab.Navigator>
   );

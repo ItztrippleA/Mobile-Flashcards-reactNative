@@ -1,23 +1,17 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import SingleDeck from "./SingleDeck";
 import AddCard from "./AddCard";
 import Quiz from "./Quiz";
 import BottomTabs from "./BottomTabs";
 
-const MainStack = createStackNavigator();
-// const ButTab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const MainNavigation = () => {
   return (
-    // <ButTab.Navigator>
-    //   <ButTab.Screen name="AddCard" component={AddCard} />
-    //   <ButTab.Screen name="Quiz" component={Quiz} />
-    // </ButTab.Navigator>
-    <MainStack.Navigator initialRouteName="Main" headerMode="screen">
-      <MainStack.Screen name="🂦 Flash-Cards 🂦" component={BottomTabs} />
-      <MainStack.Screen
+    <Stack.Navigator initialRouteName="Main" headerMode="screen">
+      <Stack.Screen name=" Flash Cards App" component={BottomTabs} />
+      <Stack.Screen
         name="Deck"
         component={SingleDeck}
         options={({ route }) => {
@@ -27,17 +21,17 @@ const MainNavigation = () => {
           };
         }}
       />
-      <MainStack.Screen
+      <Stack.Screen
         name="AddCard"
         component={AddCard}
         options={{ headerTitle: "AddCard" }}
       />
-      <MainStack.Screen
+      <Stack.Screen
         name="Quiz"
         component={Quiz}
         options={{ headerTitle: "Quiz" }}
       />
-    </MainStack.Navigator>
+    </Stack.Navigator>
   );
 };
 

@@ -1,12 +1,14 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React, { Component } from "react";
+import { Text, View } from "react-native";
 
-const Quiz = () => {
-  return (
-    <View>
-      <Text></Text>
-    </View>
-  );
-};
+class Quiz extends Component {
+  render() {
+    return (
+      <View>
+        <Text> textInComponent </Text>
+      </View>
+    );
+  }
+}
 
 export default Quiz;

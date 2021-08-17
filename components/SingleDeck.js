@@ -9,7 +9,7 @@ import styled from "styled-components/native";
 import { red } from "../utils/colors";
 
 // Styled Components
-const IndividualDeckContainer = styled(View)`
+const SingleDeckContainer = styled(View)`
   flex: 1;
   padding: 16px;
 `;
@@ -60,9 +60,32 @@ class SingleDeck extends Component {
   render() {
     const { deck, navigation } = this.props;
     return (
-      <IndividualDeckContainer>
-        {/* individual question page goes here */}
-      </IndividualDeckContainer>
+      <SingleDeckContainer>
+        <View>
+          <StyledTitle>{deck.title}</StyledTitle>
+          <StyledText>{`${deck.questions.length} ${
+            deck.questions.length === 1 ? "card" : "cards"
+          }`}</StyledText>
+        </View>
+        <View>
+          <StyledButton
+            mode="outlined"
+            onPress={() => navigation.navigate("AddCard", { deck: deck.title })}
+          >
+            Add Card
+          </StyledButton>
+          <StyledButton
+            mode="contained"
+            disabled={deck.questions.length === 0}
+            onPress={() => navigation.navigate("Quiz", { deck: deck })}
+          >
+            Start Quiz
+          </StyledButton>
+          <StyledButton onPress={this.handleDelete} color={red}>
+            Delete Deck
+          </StyledButton>
+        </View>
+      </SingleDeckContainer>
     );
   }
 }

@@ -32,16 +32,23 @@ const NewDeck = (props) => {
   const dispatch = useDispatch();
 
   //to home route
+  const toHome = () => {
+    props.navigation.dispatch({
+      ...CommonActions.goBack(),
+      source: "NewDeck",
+    });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // update redux store:
-
+    dispatch(addDeck(text));
     // set the state of the NewDeck component back to "":
-
+    setText("");
     // go back to home-screen:
-
+    toHome();
     // save to DB:
+    saveDeck(text);
   };
 
   return (

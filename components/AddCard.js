@@ -14,7 +14,6 @@ const AddCardContainer = styled.View`
 
 const NewCard = styled(Card)`
   margin-top: 16px;
-  elevation: 0.5;
   border-radius: 5px;
 `;
 

@@ -17,7 +17,7 @@ const QuizContainer = styled.View`
 
 const QuizCard = styled(Card)`
   margin-top: 16px;
-  elevation: 0.5;
+
   border-radius: 10px;
 `;
 

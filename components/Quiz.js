@@ -34,6 +34,7 @@ class Quiz extends Component {
     score: 0,
     currentCard: 0,
     isAnswer: false,
+    numberofCards: 1,
   };
 
   handleSubmitAnswer = (answer) => {
@@ -43,12 +44,14 @@ class Quiz extends Component {
         currentCard: this.state.currentCard + 1,
         score: this.state.score + 1,
         isAnswer: false,
+        numberofCards: this.state.numberofCards + 1,
       }));
     } else {
       this.setState((prevState) => ({
         ...prevState,
         currentCard: this.state.currentCard + 1,
         isAnswer: false,
+        numberofCards: this.state.numberofCards + 1,
       }));
     }
     clearLocalNotification().then(setLocalNotification);
@@ -61,6 +64,7 @@ class Quiz extends Component {
       currentCard: 0,
       score: 0,
       isAnswer: false,
+      numberofCards: 1,
     }));
   };
 
@@ -76,7 +80,7 @@ class Quiz extends Component {
     // get the lenght of all decks:
     const allDecks = deck.questions.length;
 
-    const { currentCard, score, isAnswer } = this.state;
+    const { currentCard, score, isAnswer, numberofCards } = this.state;
 
     return (
       <QuizContainer>
@@ -94,6 +98,11 @@ class Quiz extends Component {
           </QuizCard>
         ) : (
           <QuizCard>
+            <View>
+              <Text>
+                {numberofCards} / {allDecks}
+              </Text>
+            </View>
             <Content>
               {isAnswer === false ? (
                 <View>
